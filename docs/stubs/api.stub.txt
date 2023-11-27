@@ -1,0 +1,15 @@
+# {{.Title}} `{{.ReturnValue}}`
+
+{{.Description}}
+
+### Signature
+
+```go
+{{.Signature}}
+```
+
+### Examples
+
+```go
+{{.Examples}}
+```
