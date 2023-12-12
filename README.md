@@ -52,6 +52,7 @@ Visit https://str.danieleckermann.com for full documentation
 - [Repeat](#repeat-str)
 - [Remove](#remove-str)
 - [Replace](#replace-str)
+- [Reverse](#reverse-str)
 - [Screaming](#screaming-str)
 - [Slug](#slug-str)
 - [Snake](#snake-str)
@@ -915,6 +916,29 @@ str.New("你好世界").Replace("你好", "再见").String()
 
 str.New("你好世界").Replace("你好", "").String()
 // "世界"
+
+```
+
+
+### Reverse `*Str`
+
+`Reverse` returns a new instance of Str with the current string reversed.
+
+```go
+str.New("i like c++").Reverse().String()
+// "++c ekil i"
+
+str.New("rocket 🚀 man").Reverse().String()
+// "nam 🚀 tekcor"
+
+str.New("go, go, go!").Reverse().String()
+// "!og ,og ,og"
+
+str.New("你好世界").Reverse().String()
+// "界世好你"
+
+str.New("你好世界").Reverse().String()
+// "界世好你"
 
 ```
 

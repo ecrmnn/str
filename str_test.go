@@ -960,6 +960,31 @@ var testCases = []testCase{
 		},
 	},
 	{
+		name: "Reverse",
+		fixtures: []fixture{
+			{
+				actual:   str.New("i like c++").Reverse().String(),
+				expected: "++c ekil i",
+			},
+			{
+				actual:   str.New("rocket 🚀 man").Reverse().String(),
+				expected: "nam 🚀 tekcor",
+			},
+			{
+				actual:   str.New("go, go, go!").Reverse().String(),
+				expected: "!og ,og ,og",
+			},
+			{
+				actual:   str.New("你好世界").Reverse().String(),
+				expected: "界世好你",
+			},
+			{
+				actual:   str.New("你好世界").Reverse().String(),
+				expected: "界世好你",
+			},
+		},
+	},
+	{
 		name: "Screaming",
 		fixtures: []fixture{
 			{

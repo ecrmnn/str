@@ -342,6 +342,21 @@ func (s *Str) Replace(old string, new string) *Str {
 	return s
 }
 
+// Reverse returns a new instance of Str with the current string reversed.
+func (s *Str) Reverse() *Str {
+	slice := strings.Split(s.getValue(), "")
+
+	length := len(slice)
+
+	for i := 0; i < length/2; i++ {
+		slice[i], slice[length-i-1] = slice[length-i-1], slice[i]
+	}
+
+	s.setValue(strings.Join(slice, ""))
+
+	return s
+}
+
 func (s *Str) Screaming() *Str {
 	v := s.getValue()
 
