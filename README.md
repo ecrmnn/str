@@ -1,6 +1,10 @@
 ![str](./docs/assets/str.png)
 
-# str ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ecrmnn/str/go.yml)
+# str
+
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ecrmnn/str/go.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ecrmnn/str)](https://goreportcard.com/report/github.com/ecrmnn/str)
+[![Go Reference](https://pkg.go.dev/badge/github.com/ecrmnn/str.svg)](https://pkg.go.dev/github.com/ecrmnn/str)
 
 ## A fluent string manipulation library in Go
 
@@ -28,7 +32,7 @@ Visit https://str.danieleckermann.com for full documentation
 - [Contains](#contains-bool)
 - [ContainsAny](#containsany-bool)
 - [ContainsAll](#containsall-bool)
-- [Copy](#copy-str)
+- [Clone](#clone-str)
 - [Count](#count-int)
 - [EndsWith](#endswith-bool)
 - [Exactly](#exactly-bool)
@@ -359,14 +363,23 @@ str.New("lorem ipsum dolor sit").
 ```
 
 
-### Copy `*Str`
+### Clone `*Str`
 
-`Copy` returns a new instance of Str with the same value as the current instance.
+`Clone` returns a new instance of Str with the same value as the current instance.
 
 ```go
 func() bool {
+	s := str.New("i like go")
+	if s.Clone().LastWord().Exactly("go") {
+		s.Append(" ❤️")
+	}
+	return s.String() == "i like go ❤️"
+}()
+// true
+
+func() bool {
 	s := str.New("go")
-	s2 := s.Copy().Append("lang")
+	s2 := s.Clone().Append("lang")
 	// s => go
 	// s2 => golang
 	return s.String() == s2.String()

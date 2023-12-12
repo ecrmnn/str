@@ -336,12 +336,22 @@ var testCases = []testCase{
 		},
 	},
 	{
-		name: "Copy",
+		name: "Clone",
 		fixtures: []fixture{
 			{
 				actual: func() bool {
+					s := str.New("i like go")
+					if s.Clone().LastWord().Exactly("go") {
+						s.Append(" ❤️")
+					}
+					return s.String() == "i like go ❤️"
+				}(),
+				expected: true,
+			},
+			{
+				actual: func() bool {
 					s := str.New("go")
-					s2 := s.Copy().Append("lang")
+					s2 := s.Clone().Append("lang")
 					// s => go
 					// s2 => golang
 					return s.String() == s2.String()
@@ -1672,6 +1682,8 @@ func TestDocs(t *testing.T) {
 		// if there was any error, print it here
 		fmt.Println("could not run command: ", err)
 	}
+
+	log.Println("Docs generated")
 }
 
 func TestEveryPublicMethod(t *testing.T) {

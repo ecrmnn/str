@@ -6,6 +6,9 @@ title: "str - A fluent string manipulation library in Go"
 
 ## A fluent string manipulation library in Go
 
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ecrmnn/str/go.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ecrmnn/str)](https://goreportcard.com/report/github.com/ecrmnn/str)
+
 ### Installation
 
 ```bash

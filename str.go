@@ -145,8 +145,8 @@ func (s *Str) ContainsAll(substrings []string) bool {
 	return contains(false, s.getValue(), substrings...)
 }
 
-// Copy returns a new instance of Str with the same value as the current instance.
-func (s *Str) Copy() *Str {
+// Clone returns a new instance of Str with the same value as the current instance.
+func (s *Str) Clone() *Str {
 	return New(s.getValue())
 }
 
